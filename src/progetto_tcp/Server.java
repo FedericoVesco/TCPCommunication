@@ -18,10 +18,23 @@ public class Server {
 
     public Server(int porta) {
         this.porta = porta;
+        try {
+            serverSocket = new ServerSocket(porta);
+            System.out.printlnerverSocket serverSocket;
+            ("Il server è in ascolto");
+        } catch (IOException e) {
+            System.out.println("Errore nella fase di ascolto");
+        }
     }
 
     public Socket attendi() {
-
+         try{
+            clientSocket = serverSocket.accept();
+            System.out.println("Il client si è connesso");
+        }catch (IOException e) {
+            System.err.println("Problema di connessione con il client");
+        }
+        return clientSocket;
     }
 
     public void scrivi(String messaggio) {
