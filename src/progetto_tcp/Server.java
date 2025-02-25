@@ -4,6 +4,7 @@
  */
 package progetto_tcp;
 
+import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -20,8 +21,7 @@ public class Server {
         this.porta = porta;
         try {
             serverSocket = new ServerSocket(porta);
-            System.out.printlnerverSocket serverSocket;
-            ("Il server è in ascolto");
+            System.out.println ("Il server è in ascolto");
         } catch (IOException e) {
             System.out.println("Errore nella fase di ascolto");
         }
